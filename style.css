@@ -79,17 +79,20 @@ a:hover {
 	display: flex;
 	justify-content: space-between;
 	box-sizing: border-box;
-	padding: 5px 25px 5px 10px;
+	padding: 5px 10px;
 }
 
 .navigation_item {
 	padding: 10px 5px;
-	;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .navigation_item:first-child {
+	padding: 3px 5px;
 	flex-grow: 1;
-	font-size: 18px;
+	font-size: 26px;
+	color: #8EA69B;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 #about,
@@ -112,7 +115,7 @@ a:hover {
 	padding: 10px;
 	line-height: 2;
 	text-align: justify;
-	margin: 60px 5vw;
+	margin: 0 5vw;
 }
 
 .arrow {
@@ -281,5 +284,8 @@ a:hover {
 	}
 	.contacts_item a {
 		display: inline;
+	}
+	#navigation {
+		padding-right: 25px;
 	}
 }
