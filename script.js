@@ -68,19 +68,19 @@ df = pd.DataFrame(
 )`;
 	const speed = 50;
 	let i = 0;
-	document.getElementById("text-editor_content").innerHTML = "";
+	document.getElementById("text-editor_code").innerHTML = "";
 	document.getElementById("text-editor_name").innerHTML = radio.value;
 	typeWriter(eval(radio.value), speed, i);
 }
 
 function typeWriter(txt, speed, i) {
 	if (i < txt.length) {
-		document.getElementById("text-editor_content").innerHTML += txt.charAt(i);
+		document.getElementById("text-editor_code").innerHTML += txt.charAt(i);
 		i++;
 		interval = setTimeout(typeWriter, speed, txt, speed, i);
 	} else {
 		i = 0;
-		document.getElementById("text-editor_content").innerHTML = "";
+		document.getElementById("text-editor_code").innerHTML = "";
 		clearTimeout(interval);
 		interval = setTimeout(typeWriter, speed, txt, speed, i);
 	}

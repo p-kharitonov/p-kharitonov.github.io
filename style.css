@@ -59,6 +59,19 @@ ul {
 	margin: 0;
 	text-align: center;
 }
+ol {
+	list-style-type: none;
+	counter-reset: counter;
+	margin: 0 10px 0 0;
+	padding: 1px 2px 0 0;
+	border-right: 1px solid #808080;
+	color: #808080;
+}
+
+ol li::before {
+	content: counter(counter);
+	counter-increment: counter;
+}
 
 .media {
 	text-align: center;
@@ -229,9 +242,22 @@ a:hover {
 	overflow: hidden;
 	width: 100%;
 	font-size: 14px;
+	border: 1px solid none;
+}
+
+.text-editor_menu-item {
+	padding: 2px 4px;
+	text-decoration: underline;
+	cursor: pointer;
+	border-color: #CCE8FF;
+}
+
+.text-editor_menu-item:hover {
+	background-color: #E5F3FF;
 }
 
 #text-editor_content {
+	display: flex;
 	overflow: scroll;
 	padding: 5px;
 	margin: 0;
@@ -240,6 +266,11 @@ a:hover {
 	background-color: #272822;
 	font-family: 'Courier New', monospace;
 	font-size: 13px;
+}
+#text-editor_code {
+	flex-grow: 1;
+	margin: 0;
+	font-family: 'Courier New', monospace;
 }
 
 .contacts_item {
