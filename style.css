@@ -267,10 +267,15 @@ a:hover {
 	font-family: 'Courier New', monospace;
 	font-size: 13px;
 }
+
 #text-editor_code {
 	flex-grow: 1;
 	margin: 0;
 	font-family: 'Courier New', monospace;
+}
+
+.text-editor_space {
+	background-color: #3e3d32;
 }
 
 .contacts_item {

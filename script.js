@@ -33,7 +33,7 @@ def get_random_elem(arr: list) -> any:
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">`;
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">`.replace(/</g, "&lt;").replace(/</g, "&gt;");
 
 	const django = `from django.db import models
 from django.contrib.auth.models import User
@@ -66,23 +66,28 @@ df = pd.DataFrame(
         "three": pd.Series(np.random.randn(3), index=["b", "c", "d"]),
     }
 )`;
-	const speed = 50;
 	let i = 0;
+	result = ""
 	document.getElementById("text-editor_code").innerHTML = "";
 	document.getElementById("text-editor_name").innerHTML = radio.value;
-	typeWriter(eval(radio.value), speed, i);
+	typeWriter(eval(radio.value), i, result);
 }
 
-function typeWriter(txt, speed, i) {
+function typeWriter(txt, i, result) {
+	const speed = 50;
 	if (i < txt.length) {
-		document.getElementById("text-editor_code").innerHTML += txt.charAt(i);
+		result += txt.charAt(i) 
+		temp = result+`<span class="text-editor_space">&nbsp;</span>`
+		document.getElementById("text-editor_code").innerHTML = temp;
 		i++;
-		interval = setTimeout(typeWriter, speed, txt, speed, i);
+		// "".concat(result, '|');
+		interval = setTimeout(typeWriter, speed, txt, i, result);
 	} else {
 		i = 0;
+		result = ""
 		document.getElementById("text-editor_code").innerHTML = "";
 		clearTimeout(interval);
-		interval = setTimeout(typeWriter, speed, txt, speed, i);
+		interval = setTimeout(typeWriter, speed, txt, i, result);
 	}
 
 }
