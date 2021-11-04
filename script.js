@@ -105,9 +105,9 @@ const smoothLinks = document.querySelectorAll('a[href^="#"]');
 for (let smoothLink of smoothLinks) {
 	smoothLink.addEventListener('click', function(e) {
 		e.preventDefault();
-		const id = smoothLink.getAttribute('href');
+		const anchor = smoothLink.getAttribute('href');
 
-		document.querySelector(id).scrollIntoView({
+		document.querySelector(anchor).scrollIntoView({
 			behavior: 'smooth',
 			block: 'start'
 		});
