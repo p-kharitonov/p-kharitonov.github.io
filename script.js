@@ -33,7 +33,7 @@ def get_random_elem(arr: list) -> any:
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">`.replace(/</g, "&lt;").replace(/</g, "&gt;");
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">`
 
 	const django = `from django.db import models
 from django.contrib.auth.models import User
@@ -76,9 +76,8 @@ df = pd.DataFrame(
 function typeWriter(txt, i, result) {
 	const speed = 50;
 	if (i < txt.length) {
-		result += txt.charAt(i) 
-		temp = result+`<span class="text-editor_space">&nbsp;</span>`
-		document.getElementById("text-editor_code").innerHTML = temp;
+		result += txt.charAt(i).replace("<", "&lt;").replace("<", "&gt;");
+		document.getElementById("text-editor_code").innerHTML = result+`<span class="text-editor_space>&nbsp;</span>`;
 		i++;
 		// "".concat(result, '|');
 		interval = setTimeout(typeWriter, speed, txt, i, result);
