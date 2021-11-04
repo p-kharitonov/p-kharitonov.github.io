@@ -1,0 +1,285 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Georgia, serif;
+	font-size: 16px;
+}
+
+header {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #DCDCDC;
+	z-index: 10;
+}
+
+footer {
+	height: 55px;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 12px 25px 12px 10px;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+h1 {
+	font-size: 45px;
+	text-align: center;
+	margin: 50px 5px 20px;
+}
+
+h2 {
+	font-size: 35px;
+	text-align: center;
+	margin: 10px;
+}
+
+aside {
+	display: none;
+}
+
+main {
+	box-sizing: border-box;
+	padding: 0 10px 5px;
+}
+
+img {
+	width: 30vw;
+	min-width: 300px;
+	vertical-align: middle;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+.media {
+	text-align: center;
+}
+
+a:hover {
+	color: #696969
+}
+
+.special {
+	display: block;
+	text-align: center;
+	margin: 5px;
+	font-size: 24px;
+}
+
+#navigation {
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: 5px 25px 5px 10px;
+}
+
+.navigation_item {
+	padding: 10px 5px;
+	;
+}
+
+.navigation_item:first-child {
+	flex-grow: 1;
+	font-size: 18px;
+}
+
+#about,
+#skills,
+#contacts {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+	box-sizing: border-box;
+	padding-top: 60px;
+	min-height: 100vh;
+}
+
+#contacts {
+	min-height: calc(100vh - 60px);
+}
+
+#about p {
+	padding: 10px;
+	line-height: 2;
+	text-align: justify;
+	margin: 60px 5vw;
+}
+
+.arrow {
+	position: relative;
+	padding: 10px;
+	width: 40px;
+	height: 40px;
+	margin: 30px auto 80px auto;
+	cursor: pointer;
+}
+
+.arrow:before,
+.arrow:after {
+	content: '';
+	position: absolute;
+	box-sizing: border-box;
+	width: 80%;
+	height: 80%;
+	border-left: 10px solid #8EA69B;
+	border-bottom: 10px solid #8EA69B;
+	animation: arrow 3s linear infinite;
+}
+
+.arrow:after {
+	animation: arrow 3s linear infinite -1.5s;
+}
+
+@keyframes arrow {
+	0% {
+		opacity: 0;
+		transform: translate(0, -20px) rotate(-45deg);
+	}
+	10%,
+	90% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+		transform: translate(0, 0) rotate(-45deg);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(0, 20px) rotate(-45deg);
+	}
+}
+
+.skills {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.skills input {
+	display: none;
+}
+
+.skills_item {
+	padding: 5px;
+	margin: 5px;
+	background-color: #FFE4B5;
+	border: 1px solid #DCDCDC;
+	cursor: pointer;
+	transition: .15s linear;
+}
+
+.skills input[type=radio]:checked+.skills_item {
+	border-color: #696969;
+	background-color: #8EA69B;
+	color: #FFFFFF;
+	transform: scale(1.2);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.skills_item:hover {
+	transform: scale(1.1);
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#text-editor {
+	position: relative;
+	width: 95%;
+	border: 1px solid #696969;
+	margin: 10px auto;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.text-editor_header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	border-bottom: 1px solid #696969;
+}
+
+.text-editor_header>div {
+	padding: 2px 5px;
+}
+
+.text-editor_icon {
+	font-size: 20px;
+	color: #8EA69B;
+}
+
+.text-editor_botton {
+	cursor: pointer;
+}
+
+.text-editor_menu {
+	overflow: hidden;
+	width: 100%;
+	font-size: 14px;
+}
+
+#text-editor_content {
+	overflow: scroll;
+	padding: 5px;
+	margin: 0;
+	color: #FFFFFF;
+	height: 200px;
+	background-color: #272822;
+	font-family: 'Courier New', monospace;
+	font-size: 13px;
+}
+
+.contacts_item {
+	margin: 20px;
+	padding: 10px;
+	font-size: 20px;
+}
+
+.contacts_item a {
+	display: block;
+}
+
+@media screen and (min-width: 768px) {
+	aside {
+		display: block;
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 50vw;
+		height: 100vh;
+		background-color: #8EA69B;
+		z-index: 100;
+	}
+	main {
+		width: 50vw;
+		padding-right: 25px;
+	}
+	header {
+		width: 50vw;
+	}
+	footer {
+		width: 50vw;
+	}
+	.media {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 50vw;
+		height: 100vh;
+		z-index: 101;
+		line-height: 100vh;
+	}
+	.contacts_item a {
+		display: inline;
+	}
+}

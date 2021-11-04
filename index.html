@@ -1,11 +1,88 @@
-<!doctype html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Сайт находится в разработке...</title>
-  </head>
-  <body>
-    <h1>Сайт находится в разработке...</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Curriculum Vitae</title>
+</head>
+<body>
+    <header>
+        <nav id="navigation">
+            <a href="#about" class="navigation_item">Curriculum Vitae</a>
+            <a href="#about" class="navigation_item">About</a>
+            <a href="#skills" class="navigation_item">Skills</a>
+            <a href="#contacts" class="navigation_item">Contacts</a>
+        </nav>
+    </header>
+    <aside>
+    </aside>
+    <main>
+        <section id="about">
+            <div>
+                <h1>Kharitonov Pavel</h1>
+                <span class="special">Python Developer</span>
+            </div>
+            <p>I develop web-application, for backend I mainly use <strong>Framework&nbsp;Django</strong>, 
+as well as programs for automation control and monitoring network devices and servers at <strong>Python</strong>. 
+For data processing I use <strong>Pandas</strong>.</p>
+            <div class="media">
+                <img src="img/photo.jpg" alt="Харитонов Павел">
+            </div>
+            <a href="#skills" class="arrow"></a>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <input type="radio" name="radio" id="python" value="python">
+                <label for="python" class="skills_item">Python</label>
+                
+                <input type="radio" name="radio" id="javascript" value="javascript">
+                <label for="javascript" class="skills_item">Javascript</label>
+
+                <input type="radio" name="radio" id="html" value="html">
+                <label for="html" class="skills_item">HTML</label>
+
+                <input type="radio" name="radio" id="css" value="css">
+                <label for="css" class="skills_item">CSS</label>
+
+                <input type="radio" name="radio" id="django" value="django">
+                <label for="django" class="skills_item">Django</label>
+
+                <input type="radio" name="radio" id="rest-api" value="restapi">
+                <label for="rest-api" class="skills_item">REST&nbsp;API</label>
+
+                <input type="radio" name="radio" id="pandas" value="pandas">
+                <label for="pandas" class="skills_item">Pandas</label>
+            </div>
+            <div id="text-editor">
+                <div class="text-editor_header">
+                    <div><span class="text-editor_icon">&#9787;</span><span id="text-editor_name">Code</span></div>
+                    <div>
+                        <span class="text-editor_botton">&mdash;</span>
+                        <span class="text-editor_botton">&#10066;</span>
+                        <span class="text-editor_botton">&#10006;</span>
+                    </div>
+                    <div class="text-editor_menu">File&nbsp;&nbsp;Edit&nbsp;&nbsp;Find&nbsp;&nbsp;View&nbsp;&nbsp;Tools&nbsp;&nbsp;Help</div>
+                </div>
+                <pre id="text-editor_content"></pre>
+            </div>
+            <a href="#contacts" class="arrow"></a>
+        </section>
+        <section id="contacts">
+            <h2>Contacts</h2>
+            <ul>
+                <li class="contacts_item"><strong>Telegram:</strong> <a href="tg://resolve?domain=Brightside11">Brightside11</a></li>
+                <li class="contacts_item"><strong>Email:</strong> <a href="mailto:workingpavel@mail.ru">workingpavel@mail.ru</a></li>
+                <li class="contacts_item"><strong>Github:</strong> <a href="https://github.com/p-kharitonov">github.com/p-kharitonov</a></li>
+            </ul>
+            <div></div>
+        </section>
+    </main>
+    <footer>
+        <span>© 2021 by Kharitonov Pavel</span>
+    </footer>
+    <script src="script.js"></script>
+</body>
 </html>
