@@ -68,7 +68,7 @@ from rest_framework.response import Response
 class AccountSerializer(serializers.ModelSerializer):
     username = serializers.CharField(source='user.username', read_only=True)`;
 
-	pandas = `import pandas as pd
+	const pandas = `import pandas as pd
 import numpy as np
 
 df = pd.DataFrame(
@@ -78,20 +78,20 @@ df = pd.DataFrame(
         "three": pd.Series(np.random.randn(3), index=["b", "c", "d"]),
     }
 )`;
-	let i = 0;
-	result = ""
+	const i = 0;
+	const result = ""
 	document.getElementById("text-editor_code").innerHTML = "";
 	document.getElementById("text-editor_name").innerHTML = radio.value;
-	typeWriter(eval(radio.value), i, result);
+	let interval = typeWriter(eval(radio.value), i, result);
 }
 
 function typeWriter(txt, i, result) {
-	const speed = 50;
+	const speed = 10;
+	const space = '<span class="text-editor_space">&nbsp;</span>';
 	if (i < txt.length) {
 		result += txt.charAt(i).replace("<", "&lt;").replace("<", "&gt;");
-		document.getElementById("text-editor_code").innerHTML = result + '<span class="text-editor_space">&nbsp;</span>';
+		document.getElementById("text-editor_code").innerHTML = result + space;
 		i++;
-		// "".concat(result, '|');
 		interval = setTimeout(typeWriter, speed, txt, i, result);
 	} else {
 		i = 0;
@@ -100,7 +100,6 @@ function typeWriter(txt, i, result) {
 		clearTimeout(interval);
 		interval = setTimeout(typeWriter, speed, txt, i, result);
 	}
-
 }
 
 // Typing
