@@ -122,7 +122,7 @@ df = pd.DataFrame(
 }
 
 function typeWriter(txt, i, result) {
-    const speed = 10;
+    const speed = 20;
     const space = '<span class="text-editor_space">&nbsp;</span>';
     if (i < txt.length) {
         result += txt.charAt(i).replace("<", "&lt;").replace("<", "&gt;");
