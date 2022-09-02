@@ -108,7 +108,7 @@ df = pd.DataFrame(
             headerName ="serializers.py";
             break;
         case "pandas":
-            txt = txtJavascript;
+            txt = txtPandas;
             headerName ="pandas.py";
             break;
         default:
